@@ -1,8 +1,8 @@
 const express = require('express');
-const { createFlow, executeFlow } = require('../controllers/flowController');
 const router = express.Router();
+const { createFlow } = require('../controllers/flowController');
 
+// POST route for creating a Flow
 router.post('/', createFlow);
-router.post('/:id/execute', executeFlow);
 
 module.exports = router;

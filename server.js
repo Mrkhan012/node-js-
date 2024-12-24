@@ -5,8 +5,14 @@ const connectDB = require('./config/db');
 const apiConfigRoutes = require('./routes/apiConfig');
 const flowRoutes = require('./routes/flow');
 
+// Load environment variables
 dotenv.config();
+
+// Connect to the database
 connectDB();
+
+// Middleware to parse JSON
+app.use(express.json());
 
 // Root route for testing
 app.get('/', (req, res) => {
